@@ -1,22 +1,44 @@
 import * as React from 'react';
 import './App.css';
 
-import logo from './logo.svg';
+class App extends React.Component<{}, { value: string }> {
 
-class App extends React.Component {
+  public static baseURL: string = "api.seattledrone.repair";
+
+  constructor(props: any) {
+    super(props);
+    this.state = { value: '' };
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
   public render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.tsx</code> and save to reload.
-        </p>
+        <h1>Track a Repair</h1>
+
+        <form onSubmit={this.handleSubmit}>
+         <label>
+           Repair ID
+           <input type="text" value={this.state.value} onChange={this.handleChange} />
+         </label>
+         <input type="submit" value="Submit" />
+        </form>
+
       </div>
     );
   }
+
+  private handleChange(event: any) {
+    this.setState({ value: event.target.value });
+  }
+
+  private handleSubmit(event: any){
+    this.setState({ value: event.target.value });
+    // api call
+  }
+
 }
 
 export default App;
