@@ -1,13 +1,17 @@
 import * as React from 'react';
 import './App.css';
+import { RestHelp } from './RESThelp';
+
 
 class App extends React.Component<{}, { value: string }> {
 
-  public static baseURL: string = "api.seattledrone.repair";
+  private api: any;
 
   constructor(props: any) {
     super(props);
     this.state = { value: '' };
+
+    this.api = new RestHelp();
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -17,26 +21,20 @@ class App extends React.Component<{}, { value: string }> {
     return (
       <div className="App">
         <h1>Track a Repair</h1>
-
-        <form onSubmit={this.handleSubmit}>
-         <label>
-           Repair ID
-           <input type="text" value={this.state.value} onChange={this.handleChange} />
-         </label>
-         <input type="submit" value="Submit" />
-        </form>
+         <input type="text" value={this.state.value} onChange={this.handleChange} />
+         <button onClick={this.handleSubmit}>Submit</button>
 
       </div>
     );
   }
 
-  private handleChange(event: any) {
+  public handleSubmit(event: any){
     this.setState({ value: event.target.value });
+    this.api.getRepair(this.state.value);
   }
 
-  private handleSubmit(event: any){
+  private handleChange(event: any) {
     this.setState({ value: event.target.value });
-    // api call
   }
 
 }
