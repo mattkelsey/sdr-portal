@@ -16,7 +16,7 @@ export const RepairSchema = new Schema({
       type: String
     },
     repairId: {
-      type: Number
+      type: String
     },
     recievedDate: {
       type: Date
