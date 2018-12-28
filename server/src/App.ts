@@ -16,6 +16,13 @@ class App {
     private config(): void {
         // support application/json type post data
         this.app.use(bodyParser.json());
+
+        this.app.use(function(req, res, next) {
+          res.header("Access-Control-Allow-Origin", "*");
+          res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+          next();
+        });
+
         //support application/x-www-form-urlencoded post data
         this.app.use(bodyParser.urlencoded({
             extended: false

@@ -8,7 +8,7 @@ export class Repairs {
     public repairController: RepairController = new RepairController();
     public routes(app): void { //received the express instance from app.ts file         
         app.route('/repair/:repairId')
-          .get((req: Request, res: Response) => {            
+          .get((req: Request, res: Response) => {
               Repair.findOne({ 'repairId': req.params.repairId }, (err, repair) => {
                 res.send(repair);
               })
