@@ -4,7 +4,7 @@ export class RestHelp {
 
   public getRepair(repairId: string) {
     fetch(this.baseURL + "repair/" + repairId)
-      .then(res => console.info(res.status));
+      .then(res => console.info(res.json()));
 
   }
 
