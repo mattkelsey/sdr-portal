@@ -1,44 +1,58 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 
-class Userinfo extends React.Component{
+class Start extends React.Component{
 
+  //initialize props for input field values
   constructor(props) {
     super(props);
     this.state = {
   	userDesc: '',
   	userDrone: '',
   	userEmail: '',
-  	userName: '',
+  	userFName: '',
+    userLName: '',
   	userPhone: ''
   	};
 
-
+    //bind event functions
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
 
   }
 
+  //On submit update props and make API call for Mongo
   handleSubmit(event){
+
+    //WORK ON THIS check if valid email address
+    if(this.state.userEmail.indexOf('@')==-1 || this.state.userEmail.indexOf('@')==0 || this.state.userEmail.indexOf('.')==-1 || this.state.userEmail.indexOf('.')==0){
+      alert("Enter Valid Email");
+    }
+
+    //TODO add Mongo DB API Call
+
+    //set states from input fields
     this.setState({
         [event.target.name] : event.target.value
     });
-    alert("val "+this.state.userName);
-    alert("val "+this.state.userEmail);
+
   }
 
+  //On keypress update the input field accordingly
   handleChange(event){
     this.setState({
 		[event.target.name] : event.target.value
 	});
 }
 
-
   render(){
     return(
       <div className="page">
- 			<h1>Track a Repair</h1>
- 			 <input type="text" placeholder="Name" value={this.state.userName} onChange={this.handleChange} name="userName" />
+      <center>
+ 			<h1>Start a Repair</h1>
+ 			 <input type="text" placeholder="First Name" value={this.state.userFName} onChange={this.handleChange} name="userFName" />
+ 			 <br />
+       <input type="text" placeholder="Last Name" value={this.state.userLName} onChange={this.handleChange} name="userLName" />
  			 <br />
  			 <input type="email" placeholder="Email" value={this.state.userEmail} onChange={this.handleChange} name="userEmail" />
  			 <br />
@@ -48,7 +62,8 @@ class Userinfo extends React.Component{
  			 <br />
  			 <textarea placeholder="Description" value={this.state.userDesc} onChange={this.handleChange} name="userDesc" />
  			 <br />
- 			 <button><Link to='/dropoff' onClick={this.handleSubmit}>Next</Link></button>
+ 			 <Link to='/dropoff' onClick={this.handleSubmit}><button className="nxtBtn">Next</button></Link>
+       </center>
  		</div>
 
     );
@@ -57,4 +72,4 @@ class Userinfo extends React.Component{
 
 }
 
-export default Userinfo;
+export default Start;
