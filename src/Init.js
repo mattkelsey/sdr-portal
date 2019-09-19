@@ -35,10 +35,16 @@ class Init extends React.Component{
 
   render(){
     return(
-      <div>
-        <Link to='/start'>Start a Repair</Link>
-        <br />
-        <Link to='/track'>Track a Repair</Link>
+      <div className="initPageSelect">
+        <h1>Select an Option below</h1>
+        <h3>If you need immidiate assitance feel free to contact us directly.
+        <br /><a href="mail">info@seattledronerepair.com</a>
+        <br /><a href="phone">206-280-9766</a>
+        </h3>
+        <div className="centerBtnWrap">
+          <Link to='/start'><div>Start a Repair</div></Link>
+          <Link to='/track'><div>Track a Repair</div></Link>
+        </div>
  			</div>
 
     );
