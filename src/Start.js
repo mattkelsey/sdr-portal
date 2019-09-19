@@ -9,6 +9,7 @@ class Start extends React.Component{
     this.state = {
     readySubmit: false,
     submitError:false,
+    userCompany: '',
   	userDesc: '',
   	userDrone: '',
     userDrop: 'def',
@@ -82,6 +83,8 @@ setRedirect = (event) => {
  			  <br />
         <input type="text" placeholder="Last Name" value={this.state.userLName} onChange={this.handleChange} name="userLName" />
  			  <br />
+        <input type="text" placeholder="Company/Organization (Optional)" value={this.state.userCompany} onChange={this.handleChange} name="userCompany" />
+        <br />
  			  <input type="email" placeholder="Email" value={this.state.userEmail} onChange={this.handleChange} name="userEmail" />
  			  <br />
  			  <input type="phone" placeholder="Phone" value={this.state.userPhone} onChange={this.handleChange} name="userPhone" />

@@ -21,7 +21,7 @@ class App extends React.Component{
           </header>
 
           {/* Add routes to allow for embedded page swithing */}
-
+          
           <Switch>
             <Route exact path='/' component={Init}/>
             <Route exact path='/start' component={Start}/>
