@@ -1,0 +1,138 @@
+header{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: rgb(25,25,25);
+  color:white;
+  padding: 20px;
+}
+header img{
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  padding-right: 20px;
+}
+.page{
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 30px;
+}
+input, textarea, select{
+  width:300px;
+  line-height: 34px;
+  font-size: 18px;
+  border-radius: 4px;
+  margin: 10px 0px;
+  padding-left: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+select{
+  width:312px;
+  height: 36px;
+}
+textarea{
+  max-width: 300px;
+  min-width: 300px;
+  min-height: 80px;
+}
+.nxtBtn{
+  margin: 10px 0px;
+  font-size: 18px;
+  background-color: rgba(0, 0, 0, 0.78);
+  width: 310px;
+  padding: 12px;
+  color: white;
+  border-radius: 10px;
+  border: none;
+}
+.nxtBtn:hover{
+  background-color: rgba(0, 0, 0, 1);
+}
+.pageTxt{
+  max-width: 600px;
+  margin: 20px 40px;
+}
+.submitTkt{
+  background-color: rgb(25, 204, 149);
+  color: white;
+  border: 3px solid rgb(25, 204, 149);
+  border-radius: 16px;
+  font-size: 20px;
+  line-height: 30px;
+  padding: 8px 36px;
+}
+.submitTkt:hover{
+  background-color: white;
+  border: 3px solid rgb(25, 204, 149);
+}
+.submitTkt:hover{
+  color: rgb(25, 204, 149);
+}
+.submitTkt a{
+  text-decoration: none;
+  color: inherit;
+}
+.centerBtnWrap{
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.initPageSelect{
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 42px;
+}
+.initPageSelect a{
+  text-decoration: none;
+  font-size: 20px;
+  color: black;
+}
+.initPageSelect a div{
+  text-align: center;
+  margin: 14px 14px;
+  font-size: 20px;
+  background-color: rgba(0, 0, 0, 0.78);
+  width: 270px;
+  padding: 22px 12px;
+  color: white;
+  border-radius: 10px;
+  border: none;
+}
+.initPageSelect a div:hover{
+  background-color: rgba(0, 0, 0, 1);
+}
+canvas{
+  border: 2px solid rgba(0,0,0,0.2);
+}
+.error{color: red}
+
+.color1{
+  background-color: rgba(0,0,0,0);
+  padding: 8px;
+}
+
+.color0{
+  background-color: rgba(0,0,0,0.05);
+  padding: 8px;
+}
+
+.priceContainer button{float: right;}
+
+.frameApt{
+        ms-zoom: 0.8;
+        -moz-transform: scale(0.8);
+        -moz-transform-origin: 0 0;
+        -o-transform: scale(0.8);
+        -o-transform-origin: 0 0;
+        -webkit-transform: scale(0.8);
+        -webkit-transform-origin: 0 0;
+        box-shadow: none;
+        border: 2px solid rgba(0,0,0,0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 6x;
+}
